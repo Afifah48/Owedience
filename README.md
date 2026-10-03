@@ -69,6 +69,8 @@ npm.cmd run build
 
 ## Use the product
 
+For the one-service Railway competition deployment, persistent volume, private access gate, and public/restart verification, see [the deployment guide](docs/railway-deployment.md). Runtime secrets are entered directly in Railway; local development remains unchanged.
+
 1. Create an expense with a category, total, participant names, payer and natural context. Receipt/audio uploads, bill items, item assignments and rough split proposals are optional. Receipts are preserved without claiming automatic parsing. A bill mismatch is passed to the agent for clarification. Every submission runs the agent. Amounts entered in the UI use ordinary currency units; API amounts are integer minor units (100 = one INR/USD/EUR/GBP unit).
 2. Owedience independently reconstructs the evidence, preserves known facts, and asks a targeted question when a material fact is missing.
 3. Answer in the expense screen. Inspect the per-person component breakdowns.
@@ -108,7 +110,7 @@ Only mark `human_verified` after reviewing the actual recording. Unreviewed tran
 
 Gnani owns voice, Pine Labs owns money movement, Delhivery owns logistics, and messaging owns delivery of authorised messages. **All external rails currently use Wizard adapters.** These adapters simulate requests and delivery, expose pending external observations for other operations, and label all results. `CONNECTOR_MODE=real` fails safely with an unconfigured-adapter message; no Gnani, Pine Labs or Delhivery endpoint was invented. Real adapters need verified vendor documentation, credentials, webhook signature validation, authenticated actors and idempotent external delivery before replacement.
 
-`SIMULATION_TOKEN` optionally gates simulation routes. Enter it in the console’s access field; it is kept in session storage. The intended deployment is localhost. Consumer identity selection and Wizard attestation are prototype trust boundaries, not production authentication or bank verification.
+`SIMULATION_TOKEN` gates simulation routes when configured. Enter it in the console’s access field; it is kept in session storage. Local development remains supported; the private Railway competition deployment also requires the separate `DEMO_ACCESS_CODE` gate. Consumer identity selection and Wizard attestation are prototype trust boundaries, not individual account authentication or bank verification.
 
 With a configured provider, the backend checks the real clock every 30 seconds. It wakes episodes with individually authorized eligible shares, at most once per hour per episode, by inserting a clock event; the LLM still chooses WAIT, creditor approval request, reminder or escalation. Closure stops checks. Scoped escalation stops only that share; global handoff pauses all previously authorized follow-ups until a human resumes each selected share. Wizard clock events exercise the same engine immediately. Set `MONITOR_ENABLED=false` for manual competition runs. This process must remain running; it is not an OS-level scheduled job.
 

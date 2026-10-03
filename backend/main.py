@@ -24,6 +24,7 @@ from backend.wizard.events import Event, HumanMessage, AudioEvent
 from backend.wizard.adapter import ingest
 from backend.models.inputs import Category, SplitPreference, ItemAssignment, FileInput
 from backend.services.attachments import AttachmentStore
+from backend.services.demo_access import DemoAccessMiddleware
 from backend.services.finance import format_minor
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,11 +40,13 @@ async def lifespan(app):
             with suppress(asyncio.CancelledError): await task
 
 app = FastAPI(title='OWEDIENCE', version='0.1.0', lifespan=lifespan)
+app.add_middleware(DemoAccessMiddleware)
 app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:5173','http://127.0.0.1:5173','http://localhost:8000','http://127.0.0.1:8000'], allow_methods=['GET','POST','PUT'], allow_headers=['Content-Type','X-Simulation-Token'])
-repo = Repository(os.getenv('DATABASE_PATH', str(ROOT / 'data' / 'owedience.sqlite3')))
+DATA_DIR = Path(os.getenv('DATA_DIR') or str(ROOT / 'data'))
+repo = Repository(os.getenv('DATABASE_PATH') or str(DATA_DIR / 'owedience.sqlite3'))
 provider = create_provider()
 engine = Engine(repo,provider,Rails(os.getenv('CONNECTOR_MODE','wizard')))
-attachment_store=AttachmentStore(ROOT/'data'/'attachments')
+attachment_store=AttachmentStore(DATA_DIR/'attachments')
 
 @app.exception_handler(PolicyError)
 async def policy_error(request, exc):
@@ -156,6 +159,7 @@ async def create_episode(body, origin='consumer'):
     # Every submission enters the existing agent, including no-text/equal/voice-only input.
     return await engine.handle(e.id)
 
+@app.get('/health')
 @app.get('/api/health')
 def health(): return {'status':'ok'}
 
