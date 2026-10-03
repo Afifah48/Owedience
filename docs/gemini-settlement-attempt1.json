@@ -1,0 +1,1056 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "passed": false,
+  "steps": [
+    {
+      "step": "Missing context",
+      "state": {
+        "id": "episode_3d200708fc4e",
+        "title": "Dinner follow-up demonstration",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Arjun"
+        ],
+        "currency": "INR",
+        "total": 140000,
+        "merchant": "",
+        "bill_itemization_complete": false,
+        "category": "food_dining",
+        "category_description": "",
+        "split_preference": "infer",
+        "user_proposed_split": {},
+        "preference_reviewed": false,
+        "attachments": [],
+        "status": "READY_TO_RECONCILE",
+        "components": [
+          {
+            "id": "cmp_9e28d06bc1f4",
+            "description": "Whole bill",
+            "amount": 140000,
+            "supporting_evidence": [
+              "ev_9c9a25f039dd"
+            ],
+            "consumers": [
+              "Afifah",
+              "Arjun"
+            ],
+            "weights": {
+              "Afifah": 1,
+              "Arjun": 1
+            },
+            "fixed_amounts": {},
+            "allocation_explanation": "",
+            "context_citations": [
+              {
+                "evidence_id": "ev_d8f2aa878916",
+                "quote": "I paid for dinner. I need to describe who shared it."
+              }
+            ],
+            "verification_status": "SUPPORTED",
+            "dispute_status": "CLEAR"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "ev_9c9a25f039dd",
+            "type": "expense_created",
+            "content": "{\"title\": \"Dinner follow-up demonstration\", \"payer\": \"Afifah\", \"participants\": [\"Afifah\", \"Arjun\"], \"currency\": \"INR\", \"total\": 140000, \"category\": \"food_dining\", \"category_description\": \"\", \"components\": [{\"id\": \"cmp_9e28d06bc1f4\", \"description\": \"Whole bill\", \"amount\": 140000}]}",
+            "source": "Afifah",
+            "connector": "human",
+            "timestamp": "2026-10-03T18:54:18.348304Z",
+            "verification_status": "ASSERTED",
+            "confidence": null,
+            "raw_reference": null,
+            "derived_from": [],
+            "payload": {
+              "title": "Dinner follow-up demonstration",
+              "payer": "Afifah",
+              "participants": [
+                "Afifah",
+                "Arjun"
+              ],
+              "currency": "INR",
+              "total": 140000,
+              "category": "food_dining",
+              "category_description": "",
+              "components": [
+                {
+                  "id": "cmp_9e28d06bc1f4",
+                  "description": "Whole bill",
+                  "amount": 140000
+                }
+              ]
+            },
+            "origin": "consumer"
+          },
+          {
+            "id": "ev_d8f2aa878916",
+            "type": "human_message",
+            "content": "I paid for dinner. I need to describe who shared it.",
+            "source": "Afifah",
+            "connector": "human",
+            "timestamp": "2026-10-03T18:54:18.348480Z",
+            "verification_status": "ASSERTED",
+            "confidence": null,
+            "raw_reference": "event_a5ed52ab87bc",
+            "derived_from": [],
+            "payload": {
+              "id": "event_a5ed52ab87bc",
+              "actor": "Afifah",
+              "origin": "consumer",
+              "type": "human_message",
+              "content": "I paid for dinner. I need to describe who shared it.",
+              "intent": null,
+              "obligation_ids": []
+            },
+            "origin": "consumer"
+          }
+        ],
+        "allocations": [],
+        "obligations": [],
+        "payments": [],
+        "settlement_requests": [],
+        "disputes": [],
+        "clarifications": [],
+        "unknowns": [],
+        "reminder_policy": {
+          "enabled": true,
+          "maximum": 2,
+          "minimum_interval_hours": 24,
+          "start_hour": 9,
+          "end_hour": 20,
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "voice_allowed": false
+        },
+        "audit_events": [
+          {
+            "provider_call": {},
+            "id": "audit_3fe25d5adab6",
+            "timestamp": "2026-10-03T18:54:18.348394Z",
+            "input_received": {
+              "content": "{\"title\": \"Dinner follow-up demonstration\", \"payer\": \"Afifah\", \"participants\": [\"Afifah\", \"Arjun\"], \"currency\": \"INR\", \"total\": 140000, \"category\": \"food_dining\", \"category_description\": \"\", \"components\": [{\"id\": \"cmp_9e28d06bc1f4\", \"description\": \"Whole bill\", \"amount\": 140000}]}",
+              "evidence_id": "ev_9c9a25f039dd",
+              "connector": "human"
+            },
+            "input_source": "consumer",
+            "real_world_source": "Afifah",
+            "connector": "human",
+            "state_before": "DETECTED",
+            "decision": "RECEIVED",
+            "concise_reason": "Payer supplied expense information; claims remain asserted.",
+            "rule_ids": [
+              "U1"
+            ],
+            "action": "create_episode",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {},
+            "tool_response": {
+              "bill_total_consistent": true
+            },
+            "state_after": "DETECTED",
+            "accepted": true
+          },
+          {
+            "provider_call": {},
+            "id": "audit_5d9a12e3a414",
+            "timestamp": "2026-10-03T18:54:18.348547Z",
+            "input_received": {
+              "content": "I paid for dinner. I need to describe who shared it.",
+              "evidence_id": "ev_d8f2aa878916",
+              "connector": "human"
+            },
+            "input_source": "consumer",
+            "real_world_source": "Afifah",
+            "connector": "human",
+            "state_before": "UNDERSTANDING",
+            "decision": "RECEIVED",
+            "concise_reason": "Human context preserved with provenance.",
+            "rule_ids": [
+              "U1"
+            ],
+            "action": "normalise_event",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {},
+            "tool_response": {},
+            "state_after": "UNDERSTANDING",
+            "accepted": true
+          },
+          {
+            "provider_call": {
+              "provider": "gemini",
+              "model": "gemini-3.5-flash-lite",
+              "requested_model": "gemini-3.5-flash-lite",
+              "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+              "response_id": "W0_BaumHH8O0g8UPgdCdkAo",
+              "attempts": 1,
+              "function_call_id": "call_1833505",
+              "finish_reason": "STOP",
+              "usage": {
+                "promptTokenCount": 7805,
+                "candidatesTokenCount": 140,
+                "totalTokenCount": 7945
+              },
+              "input_sha256": "b5e72dc663ccb9dba5013bff13329f56162f8e2d2c40465d1f223d6972f65077",
+              "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+            },
+            "id": "audit_ef136b6cc5be",
+            "timestamp": "2026-10-03T18:54:20.647656Z",
+            "input_received": {
+              "event": "resume"
+            },
+            "input_source": "system",
+            "real_world_source": "system",
+            "connector": "agent",
+            "state_before": "UNDERSTANDING",
+            "decision": "RECONSTRUCT_CONTEXT",
+            "concise_reason": "Afifah stated she paid for dinner, and both Afifah and Arjun participated in the shared dinner expense.",
+            "rule_ids": [
+              "U1",
+              "U4"
+            ],
+            "action": "reconstruct_context",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {
+              "reason": "Afifah stated she paid for dinner, and both Afifah and Arjun participated in the shared dinner expense.",
+              "rule_ids": [
+                "U1",
+                "U4"
+              ],
+              "affected_entities": [],
+              "tool": "reconstruct_context",
+              "items": [
+                {
+                  "component_id": "cmp_9e28d06bc1f4",
+                  "consumers": [
+                    "Afifah",
+                    "Arjun"
+                  ],
+                  "weights": {
+                    "Afifah": 1,
+                    "Arjun": 1
+                  },
+                  "fixed_amounts": {},
+                  "percentages": {},
+                  "complete": true,
+                  "explanation": "",
+                  "citations": [
+                    {
+                      "evidence_id": "ev_d8f2aa878916",
+                      "quote": "I paid for dinner. I need to describe who shared it."
+                    }
+                  ]
+                }
+              ]
+            },
+            "tool_response": {
+              "status": "CONTEXT_UPDATED",
+              "unknown_components": []
+            },
+            "state_after": "READY_TO_RECONCILE",
+            "accepted": true
+          },
+          {
+            "provider_call": {
+              "provider": "gemini",
+              "model": "gemini-3.5-flash-lite",
+              "requested_model": "gemini-3.5-flash-lite",
+              "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+              "response_id": "XU_BasqALY_eg8UPvOPcyAk",
+              "attempts": 1,
+              "function_call_id": "call_2466351",
+              "finish_reason": "STOP",
+              "usage": {
+                "promptTokenCount": 7863,
+                "candidatesTokenCount": 170,
+                "totalTokenCount": 8033
+              },
+              "input_sha256": "a6901e818587733960a1b1336417b4a9dee2269b87248c46523a9e3c699308c6",
+              "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+            },
+            "id": "audit_dd08f1111954",
+            "timestamp": "2026-10-03T18:54:22.711278Z",
+            "input_received": {
+              "event": "resume"
+            },
+            "input_source": "system",
+            "real_world_source": "system",
+            "connector": "agent",
+            "state_before": "READY_TO_RECONCILE",
+            "decision": "RECONSTRUCT_CONTEXT",
+            "concise_reason": "No new context; choose another action or wait",
+            "rule_ids": [
+              "U1",
+              "U7",
+              "E3"
+            ],
+            "action": "reconstruct_context",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {
+              "reason": "Reconstruct supported sharing context for the whole bill between Afifah and Arjun based on Afifah's statement.",
+              "rule_ids": [
+                "U1",
+                "U7"
+              ],
+              "affected_entities": [],
+              "tool": "reconstruct_context",
+              "items": [
+                {
+                  "component_id": "cmp_9e28d06bc1f4",
+                  "consumers": [
+                    "Afifah",
+                    "Arjun"
+                  ],
+                  "weights": {
+                    "Afifah": 1,
+                    "Arjun": 1
+                  },
+                  "fixed_amounts": {},
+                  "percentages": {},
+                  "complete": true,
+                  "explanation": "Afifah stated she paid for dinner and needs to describe who shared it, supporting equal sharing between Afifah and Arjun.",
+                  "citations": [
+                    {
+                      "evidence_id": "ev_d8f2aa878916",
+                      "quote": "I paid for dinner. I need to describe who shared it."
+                    }
+                  ]
+                }
+              ]
+            },
+            "tool_response": {
+              "status": "POLICY_REJECTED",
+              "error": "No new context; choose another action or wait"
+            },
+            "state_after": "READY_TO_RECONCILE",
+            "accepted": false
+          },
+          {
+            "provider_call": {
+              "provider": "gemini",
+              "model": "gemini-3.5-flash-lite",
+              "requested_model": "gemini-3.5-flash-lite",
+              "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+              "response_id": "X0_Baoq5IMHbg8UPpvqm6Ak",
+              "attempts": 1,
+              "function_call_id": "call_2362666",
+              "finish_reason": "STOP",
+              "usage": {
+                "promptTokenCount": 7871,
+                "candidatesTokenCount": 169,
+                "totalTokenCount": 8040
+              },
+              "input_sha256": "25b56e148df4af38b59fd6d6fb24e60fe77cf063405a9276faa18a73186b140a",
+              "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+            },
+            "id": "audit_b1d7476c2291",
+            "timestamp": "2026-10-03T18:54:24.541326Z",
+            "input_received": {
+              "event": "resume"
+            },
+            "input_source": "system",
+            "real_world_source": "system",
+            "connector": "agent",
+            "state_before": "READY_TO_RECONCILE",
+            "decision": "RECONSTRUCT_CONTEXT",
+            "concise_reason": "No new context; choose another action or wait",
+            "rule_ids": [
+              "U1",
+              "U7",
+              "E3"
+            ],
+            "action": "reconstruct_context",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {
+              "reason": "Reconstruct supported context for whole bill sharing between Afifah and Arjun based on Afifah's statement.",
+              "rule_ids": [
+                "U1",
+                "U7"
+              ],
+              "affected_entities": [],
+              "tool": "reconstruct_context",
+              "items": [
+                {
+                  "component_id": "cmp_9e28d06bc1f4",
+                  "consumers": [
+                    "Afifah",
+                    "Arjun"
+                  ],
+                  "weights": {
+                    "Arjun": 1,
+                    "Afifah": 1
+                  },
+                  "fixed_amounts": {},
+                  "percentages": {},
+                  "complete": true,
+                  "explanation": "Afifah stated she paid for dinner and needs to describe who shared it, supporting shared consumption between Afifah and Arjun.",
+                  "citations": [
+                    {
+                      "evidence_id": "ev_d8f2aa878916",
+                      "quote": "I paid for dinner. I need to describe who shared it."
+                    }
+                  ]
+                }
+              ]
+            },
+            "tool_response": {
+              "status": "POLICY_REJECTED",
+              "error": "No new context; choose another action or wait"
+            },
+            "state_after": "READY_TO_RECONCILE",
+            "accepted": false
+          },
+          {
+            "provider_call": {
+              "provider": "gemini",
+              "model": "gemini-3.5-flash-lite",
+              "requested_model": "gemini-3.5-flash-lite",
+              "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+              "response_id": "YU_BatfUGf3dqfkP282l4QQ",
+              "attempts": 1,
+              "function_call_id": "call_211428",
+              "finish_reason": "STOP",
+              "usage": {
+                "promptTokenCount": 7871,
+                "candidatesTokenCount": 163,
+                "totalTokenCount": 8034
+              },
+              "input_sha256": "dd548d52d5abdf4915ee04792266a57133a2381e30717cf49b6e79de1184b5db",
+              "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+            },
+            "id": "audit_a89995134536",
+            "timestamp": "2026-10-03T18:54:26.360106Z",
+            "input_received": {
+              "event": "resume"
+            },
+            "input_source": "system",
+            "real_world_source": "system",
+            "connector": "agent",
+            "state_before": "READY_TO_RECONCILE",
+            "decision": "RECONSTRUCT_CONTEXT",
+            "concise_reason": "No new context; choose another action or wait",
+            "rule_ids": [
+              "U1",
+              "U7",
+              "E3"
+            ],
+            "action": "reconstruct_context",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {
+              "reason": "Reconstruct supported sharing context for the whole bill component between Afifah and Arjun based on Afifah's statement.",
+              "rule_ids": [
+                "U1",
+                "U7"
+              ],
+              "affected_entities": [],
+              "tool": "reconstruct_context",
+              "items": [
+                {
+                  "component_id": "cmp_9e28d06bc1f4",
+                  "consumers": [
+                    "Afifah",
+                    "Arjun"
+                  ],
+                  "weights": {
+                    "Afifah": 1,
+                    "Arjun": 1
+                  },
+                  "fixed_amounts": {},
+                  "percentages": {},
+                  "complete": true,
+                  "explanation": "Afifah paid for dinner and indicated that both Afifah and Arjun shared it.",
+                  "citations": [
+                    {
+                      "evidence_id": "ev_d8f2aa878916",
+                      "quote": "I paid for dinner. I need to describe who shared it."
+                    }
+                  ]
+                }
+              ]
+            },
+            "tool_response": {
+              "status": "POLICY_REJECTED",
+              "error": "No new context; choose another action or wait"
+            },
+            "state_after": "READY_TO_RECONCILE",
+            "accepted": false
+          },
+          {
+            "provider_call": {},
+            "id": "audit_ea5c67b164ae",
+            "timestamp": "2026-10-03T18:54:26.385589Z",
+            "input_received": {
+              "event": "resume"
+            },
+            "input_source": "system",
+            "real_world_source": "system",
+            "connector": "agent",
+            "state_before": "READY_TO_RECONCILE",
+            "decision": "WAIT",
+            "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+            "rule_ids": [
+              "E3"
+            ],
+            "action": "loop_guard",
+            "exact_message": null,
+            "recipient": null,
+            "tool_request": {},
+            "tool_response": {},
+            "state_after": "READY_TO_RECONCILE",
+            "accepted": false
+          }
+        ],
+        "processed_event_ids": [
+          "event_a5ed52ab87bc"
+        ],
+        "messages": [
+          {
+            "speaker": "Afifah",
+            "message": "I paid for dinner. I need to describe who shared it.",
+            "timestamp": "2026-10-03T18:54:18.348480+00:00"
+          }
+        ],
+        "connector_failures": {},
+        "connector_responses": [],
+        "agent_notice": "I need a little help to safely continue. Your existing shares are saved.",
+        "clock": "2026-10-03T18:54:18.348240Z",
+        "created_at": "2026-10-03T18:54:18.348246Z",
+        "updated_at": "2026-10-03T18:54:26.385630Z"
+      }
+    }
+  ],
+  "episode_id": "episode_3d200708fc4e",
+  "error": "Gemini unavailable or policy loop paused; see audit",
+  "final_state": {
+    "id": "episode_3d200708fc4e",
+    "title": "Dinner follow-up demonstration",
+    "payer": "Afifah",
+    "participants": [
+      "Afifah",
+      "Arjun"
+    ],
+    "currency": "INR",
+    "total": 140000,
+    "merchant": "",
+    "bill_itemization_complete": false,
+    "category": "food_dining",
+    "category_description": "",
+    "split_preference": "infer",
+    "user_proposed_split": {},
+    "preference_reviewed": false,
+    "attachments": [],
+    "status": "READY_TO_RECONCILE",
+    "components": [
+      {
+        "id": "cmp_9e28d06bc1f4",
+        "description": "Whole bill",
+        "amount": 140000,
+        "supporting_evidence": [
+          "ev_9c9a25f039dd"
+        ],
+        "consumers": [
+          "Afifah",
+          "Arjun"
+        ],
+        "weights": {
+          "Afifah": 1,
+          "Arjun": 1
+        },
+        "fixed_amounts": {},
+        "allocation_explanation": "",
+        "context_citations": [
+          {
+            "evidence_id": "ev_d8f2aa878916",
+            "quote": "I paid for dinner. I need to describe who shared it."
+          }
+        ],
+        "verification_status": "SUPPORTED",
+        "dispute_status": "CLEAR"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev_9c9a25f039dd",
+        "type": "expense_created",
+        "content": "{\"title\": \"Dinner follow-up demonstration\", \"payer\": \"Afifah\", \"participants\": [\"Afifah\", \"Arjun\"], \"currency\": \"INR\", \"total\": 140000, \"category\": \"food_dining\", \"category_description\": \"\", \"components\": [{\"id\": \"cmp_9e28d06bc1f4\", \"description\": \"Whole bill\", \"amount\": 140000}]}",
+        "source": "Afifah",
+        "connector": "human",
+        "timestamp": "2026-10-03T18:54:18.348304Z",
+        "verification_status": "ASSERTED",
+        "confidence": null,
+        "raw_reference": null,
+        "derived_from": [],
+        "payload": {
+          "title": "Dinner follow-up demonstration",
+          "payer": "Afifah",
+          "participants": [
+            "Afifah",
+            "Arjun"
+          ],
+          "currency": "INR",
+          "total": 140000,
+          "category": "food_dining",
+          "category_description": "",
+          "components": [
+            {
+              "id": "cmp_9e28d06bc1f4",
+              "description": "Whole bill",
+              "amount": 140000
+            }
+          ]
+        },
+        "origin": "consumer"
+      },
+      {
+        "id": "ev_d8f2aa878916",
+        "type": "human_message",
+        "content": "I paid for dinner. I need to describe who shared it.",
+        "source": "Afifah",
+        "connector": "human",
+        "timestamp": "2026-10-03T18:54:18.348480Z",
+        "verification_status": "ASSERTED",
+        "confidence": null,
+        "raw_reference": "event_a5ed52ab87bc",
+        "derived_from": [],
+        "payload": {
+          "id": "event_a5ed52ab87bc",
+          "actor": "Afifah",
+          "origin": "consumer",
+          "type": "human_message",
+          "content": "I paid for dinner. I need to describe who shared it.",
+          "intent": null,
+          "obligation_ids": []
+        },
+        "origin": "consumer"
+      }
+    ],
+    "allocations": [],
+    "obligations": [],
+    "payments": [],
+    "settlement_requests": [],
+    "disputes": [],
+    "clarifications": [],
+    "unknowns": [],
+    "reminder_policy": {
+      "enabled": true,
+      "maximum": 2,
+      "minimum_interval_hours": 24,
+      "start_hour": 9,
+      "end_hour": 20,
+      "utc_offset_minutes": 330,
+      "channels": [
+        "message"
+      ],
+      "voice_allowed": false
+    },
+    "audit_events": [
+      {
+        "provider_call": {},
+        "id": "audit_3fe25d5adab6",
+        "timestamp": "2026-10-03T18:54:18.348394Z",
+        "input_received": {
+          "content": "{\"title\": \"Dinner follow-up demonstration\", \"payer\": \"Afifah\", \"participants\": [\"Afifah\", \"Arjun\"], \"currency\": \"INR\", \"total\": 140000, \"category\": \"food_dining\", \"category_description\": \"\", \"components\": [{\"id\": \"cmp_9e28d06bc1f4\", \"description\": \"Whole bill\", \"amount\": 140000}]}",
+          "evidence_id": "ev_9c9a25f039dd",
+          "connector": "human"
+        },
+        "input_source": "consumer",
+        "real_world_source": "Afifah",
+        "connector": "human",
+        "state_before": "DETECTED",
+        "decision": "RECEIVED",
+        "concise_reason": "Payer supplied expense information; claims remain asserted.",
+        "rule_ids": [
+          "U1"
+        ],
+        "action": "create_episode",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {},
+        "tool_response": {
+          "bill_total_consistent": true
+        },
+        "state_after": "DETECTED",
+        "accepted": true
+      },
+      {
+        "provider_call": {},
+        "id": "audit_5d9a12e3a414",
+        "timestamp": "2026-10-03T18:54:18.348547Z",
+        "input_received": {
+          "content": "I paid for dinner. I need to describe who shared it.",
+          "evidence_id": "ev_d8f2aa878916",
+          "connector": "human"
+        },
+        "input_source": "consumer",
+        "real_world_source": "Afifah",
+        "connector": "human",
+        "state_before": "UNDERSTANDING",
+        "decision": "RECEIVED",
+        "concise_reason": "Human context preserved with provenance.",
+        "rule_ids": [
+          "U1"
+        ],
+        "action": "normalise_event",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {},
+        "tool_response": {},
+        "state_after": "UNDERSTANDING",
+        "accepted": true
+      },
+      {
+        "provider_call": {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "requested_model": "gemini-3.5-flash-lite",
+          "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+          "response_id": "W0_BaumHH8O0g8UPgdCdkAo",
+          "attempts": 1,
+          "function_call_id": "call_1833505",
+          "finish_reason": "STOP",
+          "usage": {
+            "promptTokenCount": 7805,
+            "candidatesTokenCount": 140,
+            "totalTokenCount": 7945
+          },
+          "input_sha256": "b5e72dc663ccb9dba5013bff13329f56162f8e2d2c40465d1f223d6972f65077",
+          "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+        },
+        "id": "audit_ef136b6cc5be",
+        "timestamp": "2026-10-03T18:54:20.647656Z",
+        "input_received": {
+          "event": "resume"
+        },
+        "input_source": "system",
+        "real_world_source": "system",
+        "connector": "agent",
+        "state_before": "UNDERSTANDING",
+        "decision": "RECONSTRUCT_CONTEXT",
+        "concise_reason": "Afifah stated she paid for dinner, and both Afifah and Arjun participated in the shared dinner expense.",
+        "rule_ids": [
+          "U1",
+          "U4"
+        ],
+        "action": "reconstruct_context",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {
+          "reason": "Afifah stated she paid for dinner, and both Afifah and Arjun participated in the shared dinner expense.",
+          "rule_ids": [
+            "U1",
+            "U4"
+          ],
+          "affected_entities": [],
+          "tool": "reconstruct_context",
+          "items": [
+            {
+              "component_id": "cmp_9e28d06bc1f4",
+              "consumers": [
+                "Afifah",
+                "Arjun"
+              ],
+              "weights": {
+                "Afifah": 1,
+                "Arjun": 1
+              },
+              "fixed_amounts": {},
+              "percentages": {},
+              "complete": true,
+              "explanation": "",
+              "citations": [
+                {
+                  "evidence_id": "ev_d8f2aa878916",
+                  "quote": "I paid for dinner. I need to describe who shared it."
+                }
+              ]
+            }
+          ]
+        },
+        "tool_response": {
+          "status": "CONTEXT_UPDATED",
+          "unknown_components": []
+        },
+        "state_after": "READY_TO_RECONCILE",
+        "accepted": true
+      },
+      {
+        "provider_call": {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "requested_model": "gemini-3.5-flash-lite",
+          "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+          "response_id": "XU_BasqALY_eg8UPvOPcyAk",
+          "attempts": 1,
+          "function_call_id": "call_2466351",
+          "finish_reason": "STOP",
+          "usage": {
+            "promptTokenCount": 7863,
+            "candidatesTokenCount": 170,
+            "totalTokenCount": 8033
+          },
+          "input_sha256": "a6901e818587733960a1b1336417b4a9dee2269b87248c46523a9e3c699308c6",
+          "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+        },
+        "id": "audit_dd08f1111954",
+        "timestamp": "2026-10-03T18:54:22.711278Z",
+        "input_received": {
+          "event": "resume"
+        },
+        "input_source": "system",
+        "real_world_source": "system",
+        "connector": "agent",
+        "state_before": "READY_TO_RECONCILE",
+        "decision": "RECONSTRUCT_CONTEXT",
+        "concise_reason": "No new context; choose another action or wait",
+        "rule_ids": [
+          "U1",
+          "U7",
+          "E3"
+        ],
+        "action": "reconstruct_context",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {
+          "reason": "Reconstruct supported sharing context for the whole bill between Afifah and Arjun based on Afifah's statement.",
+          "rule_ids": [
+            "U1",
+            "U7"
+          ],
+          "affected_entities": [],
+          "tool": "reconstruct_context",
+          "items": [
+            {
+              "component_id": "cmp_9e28d06bc1f4",
+              "consumers": [
+                "Afifah",
+                "Arjun"
+              ],
+              "weights": {
+                "Afifah": 1,
+                "Arjun": 1
+              },
+              "fixed_amounts": {},
+              "percentages": {},
+              "complete": true,
+              "explanation": "Afifah stated she paid for dinner and needs to describe who shared it, supporting equal sharing between Afifah and Arjun.",
+              "citations": [
+                {
+                  "evidence_id": "ev_d8f2aa878916",
+                  "quote": "I paid for dinner. I need to describe who shared it."
+                }
+              ]
+            }
+          ]
+        },
+        "tool_response": {
+          "status": "POLICY_REJECTED",
+          "error": "No new context; choose another action or wait"
+        },
+        "state_after": "READY_TO_RECONCILE",
+        "accepted": false
+      },
+      {
+        "provider_call": {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "requested_model": "gemini-3.5-flash-lite",
+          "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+          "response_id": "X0_Baoq5IMHbg8UPpvqm6Ak",
+          "attempts": 1,
+          "function_call_id": "call_2362666",
+          "finish_reason": "STOP",
+          "usage": {
+            "promptTokenCount": 7871,
+            "candidatesTokenCount": 169,
+            "totalTokenCount": 8040
+          },
+          "input_sha256": "25b56e148df4af38b59fd6d6fb24e60fe77cf063405a9276faa18a73186b140a",
+          "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+        },
+        "id": "audit_b1d7476c2291",
+        "timestamp": "2026-10-03T18:54:24.541326Z",
+        "input_received": {
+          "event": "resume"
+        },
+        "input_source": "system",
+        "real_world_source": "system",
+        "connector": "agent",
+        "state_before": "READY_TO_RECONCILE",
+        "decision": "RECONSTRUCT_CONTEXT",
+        "concise_reason": "No new context; choose another action or wait",
+        "rule_ids": [
+          "U1",
+          "U7",
+          "E3"
+        ],
+        "action": "reconstruct_context",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {
+          "reason": "Reconstruct supported context for whole bill sharing between Afifah and Arjun based on Afifah's statement.",
+          "rule_ids": [
+            "U1",
+            "U7"
+          ],
+          "affected_entities": [],
+          "tool": "reconstruct_context",
+          "items": [
+            {
+              "component_id": "cmp_9e28d06bc1f4",
+              "consumers": [
+                "Afifah",
+                "Arjun"
+              ],
+              "weights": {
+                "Arjun": 1,
+                "Afifah": 1
+              },
+              "fixed_amounts": {},
+              "percentages": {},
+              "complete": true,
+              "explanation": "Afifah stated she paid for dinner and needs to describe who shared it, supporting shared consumption between Afifah and Arjun.",
+              "citations": [
+                {
+                  "evidence_id": "ev_d8f2aa878916",
+                  "quote": "I paid for dinner. I need to describe who shared it."
+                }
+              ]
+            }
+          ]
+        },
+        "tool_response": {
+          "status": "POLICY_REJECTED",
+          "error": "No new context; choose another action or wait"
+        },
+        "state_after": "READY_TO_RECONCILE",
+        "accepted": false
+      },
+      {
+        "provider_call": {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "requested_model": "gemini-3.5-flash-lite",
+          "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+          "response_id": "YU_BatfUGf3dqfkP282l4QQ",
+          "attempts": 1,
+          "function_call_id": "call_211428",
+          "finish_reason": "STOP",
+          "usage": {
+            "promptTokenCount": 7871,
+            "candidatesTokenCount": 163,
+            "totalTokenCount": 8034
+          },
+          "input_sha256": "dd548d52d5abdf4915ee04792266a57133a2381e30717cf49b6e79de1184b5db",
+          "prompt_sha256": "c82466507afd542c8482da19fe1728289e8f16914f70f9d84ee73b1ee11d8089"
+        },
+        "id": "audit_a89995134536",
+        "timestamp": "2026-10-03T18:54:26.360106Z",
+        "input_received": {
+          "event": "resume"
+        },
+        "input_source": "system",
+        "real_world_source": "system",
+        "connector": "agent",
+        "state_before": "READY_TO_RECONCILE",
+        "decision": "RECONSTRUCT_CONTEXT",
+        "concise_reason": "No new context; choose another action or wait",
+        "rule_ids": [
+          "U1",
+          "U7",
+          "E3"
+        ],
+        "action": "reconstruct_context",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {
+          "reason": "Reconstruct supported sharing context for the whole bill component between Afifah and Arjun based on Afifah's statement.",
+          "rule_ids": [
+            "U1",
+            "U7"
+          ],
+          "affected_entities": [],
+          "tool": "reconstruct_context",
+          "items": [
+            {
+              "component_id": "cmp_9e28d06bc1f4",
+              "consumers": [
+                "Afifah",
+                "Arjun"
+              ],
+              "weights": {
+                "Afifah": 1,
+                "Arjun": 1
+              },
+              "fixed_amounts": {},
+              "percentages": {},
+              "complete": true,
+              "explanation": "Afifah paid for dinner and indicated that both Afifah and Arjun shared it.",
+              "citations": [
+                {
+                  "evidence_id": "ev_d8f2aa878916",
+                  "quote": "I paid for dinner. I need to describe who shared it."
+                }
+              ]
+            }
+          ]
+        },
+        "tool_response": {
+          "status": "POLICY_REJECTED",
+          "error": "No new context; choose another action or wait"
+        },
+        "state_after": "READY_TO_RECONCILE",
+        "accepted": false
+      },
+      {
+        "provider_call": {},
+        "id": "audit_ea5c67b164ae",
+        "timestamp": "2026-10-03T18:54:26.385589Z",
+        "input_received": {
+          "event": "resume"
+        },
+        "input_source": "system",
+        "real_world_source": "system",
+        "connector": "agent",
+        "state_before": "READY_TO_RECONCILE",
+        "decision": "WAIT",
+        "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+        "rule_ids": [
+          "E3"
+        ],
+        "action": "loop_guard",
+        "exact_message": null,
+        "recipient": null,
+        "tool_request": {},
+        "tool_response": {},
+        "state_after": "READY_TO_RECONCILE",
+        "accepted": false
+      }
+    ],
+    "processed_event_ids": [
+      "event_a5ed52ab87bc"
+    ],
+    "messages": [
+      {
+        "speaker": "Afifah",
+        "message": "I paid for dinner. I need to describe who shared it.",
+        "timestamp": "2026-10-03T18:54:18.348480+00:00"
+      }
+    ],
+    "connector_failures": {},
+    "connector_responses": [],
+    "agent_notice": "I need a little help to safely continue. Your existing shares are saved.",
+    "clock": "2026-10-03T18:54:18.348240Z",
+    "created_at": "2026-10-03T18:54:18.348246Z",
+    "updated_at": "2026-10-03T18:54:26.385630Z"
+  }
+}

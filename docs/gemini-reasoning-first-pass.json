@@ -1,0 +1,2443 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "passed": 2,
+  "total": 2,
+  "cases": [
+    {
+      "case": "B",
+      "episode_id": "episode_523cf374d332",
+      "input": {
+        "title": "Live test B · Dinner missing drinks",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 240000,
+        "initial_context": "Riya and I had veg. Arjun and Kabir had chicken. Kabir had dessert.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Veg platter",
+            "amount": 60000
+          },
+          {
+            "description": "Chicken platter",
+            "amount": 80000
+          },
+          {
+            "description": "Dessert",
+            "amount": 40000
+          },
+          {
+            "description": "Drinks",
+            "amount": 60000
+          }
+        ]
+      },
+      "passed": true,
+      "errors": [],
+      "status": "NEEDS_CLARIFICATION",
+      "questions": [
+        "Who had the drinks?"
+      ],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "RjTBas-0EJDm4-EPooyF-AQ",
+            "attempts": 1,
+            "function_call_id": "call_2718470",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7036,
+              "candidatesTokenCount": 283,
+              "totalTokenCount": 7319
+            },
+            "input_sha256": "9be2d5d7ef3a88b79053b45668fd7abbf67c2d2bca2588eb155145ae1a80eaa5",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_7c687fd52295",
+          "timestamp": "2026-10-03T16:58:47.701009Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructing context for veg platter, chicken platter, and dessert based on Afifah's message.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had veg platter",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had chicken platter",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had dessert",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "SDTBapC-GpbRg8UP2fzUiAo",
+            "attempts": 1,
+            "function_call_id": "call_2812337",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7049,
+              "candidatesTokenCount": 298,
+              "totalTokenCount": 7347
+            },
+            "input_sha256": "65f843ac839a2022e855fb4159c9781b982415a8c06f677e1bfba536780f9faf",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_a5358cf733d5",
+          "timestamp": "2026-10-03T16:58:49.757109Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for veg platter, chicken platter, and dessert based on Afifah's statement.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "SjTBaq-TMOijqfkPioqc0Qk",
+            "attempts": 1,
+            "function_call_id": "call_1770080",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7049,
+              "candidatesTokenCount": 336,
+              "totalTokenCount": 7385
+            },
+            "input_sha256": "6318d4f1ff63f4721d6d5d294535a9f2bf547ccdc4e0674583366d0c848f0cf4",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_979575cd49c0",
+          "timestamp": "2026-10-03T16:58:52.232889Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4",
+            "U7",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct the consumption for veg platter, chicken platter, and dessert based on Afifah's statement, leaving drinks for clarification since no consumers were specified.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4",
+              "U7"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the veg platter as stated by Afifah.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the chicken platter as stated by Afifah.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had dessert as stated by Afifah.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {},
+          "id": "audit_e5b87d478ac5",
+          "timestamp": "2026-10-03T16:58:52.259385Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+          "rule_ids": [
+            "E3"
+          ],
+          "action": "loop_guard",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {},
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "zzTBau-dIqO1g8UPk4bkuQo",
+            "attempts": 1,
+            "function_call_id": "call_113140",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7204,
+              "candidatesTokenCount": 316,
+              "totalTokenCount": 7520
+            },
+            "input_sha256": "0e58554b51b4e746cba3fc28035aae3902866c2a6aeb74fb5fd31ed4a848b7c9",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_9a9b512628ff",
+          "timestamp": "2026-10-03T17:01:05.307226Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U5",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructing context for Veg platter, Chicken platter, and Dessert based on Afifah's explicit message.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U5"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah stated that Riya and she had the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah stated that Arjun and Kabir had the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah stated that Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "0jTBaqqsHpWzg8UP3N_m0Ak",
+            "attempts": 1,
+            "function_call_id": "call_2402621",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7217,
+              "candidatesTokenCount": 410,
+              "totalTokenCount": 7627
+            },
+            "input_sha256": "1160c0db880affcb86f63bb9f042c06a68556204b1c059334b84f0ec651da3fc",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_5e3ab4bf7c0b",
+          "timestamp": "2026-10-03T17:01:08.237688Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4",
+            "U7",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructing context for verified components based on Afifah's message.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4",
+              "U7"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya consumed the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir consumed the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir consumed the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_d3a4a67fee95",
+                "consumers": [
+                  "Afifah",
+                  "Arjun",
+                  "Kabir",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": false,
+                "explanation": "Drinks consumption not mentioned in instructions; seeking clarification.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg. Arjun and Kabir had chicken. Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "1TTBaq2ZAdfx4-EPiKCl-AY",
+            "attempts": 1,
+            "function_call_id": "call_2542177",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7217,
+              "candidatesTokenCount": 301,
+              "totalTokenCount": 7518
+            },
+            "input_sha256": "ca5264f0658a87ba2da9290add046f935ccefe8e48f9bd3b545ab82bd546f0f3",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_79acd32904bf",
+          "timestamp": "2026-10-03T17:01:10.300475Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for veg platter, chicken platter, and dessert based on Afifah's message.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {},
+          "id": "audit_2b396a6e1079",
+          "timestamp": "2026-10-03T17:01:10.324755Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+          "rule_ids": [
+            "E3"
+          ],
+          "action": "loop_guard",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {},
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "NzXBauelEdWymNMP3eGlqQQ",
+            "attempts": 1,
+            "function_call_id": "call_2193215",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7474,
+              "candidatesTokenCount": 451,
+              "totalTokenCount": 7925
+            },
+            "input_sha256": "c157a0fe85125b4017f02279bf8175bfd46bafd5d12de1a00a13057ffd157663",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_b710db77b576",
+          "timestamp": "2026-10-03T17:02:49.088886Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Fixed shares exceed component amount",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U3",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructing context for all components based on Afifah's message. Drinks consumption is missing.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U3"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Riya": 1,
+                  "Afifah": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Arjun": 1,
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {
+                  "Kabir": "40000"
+                },
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_d3a4a67fee95",
+                "consumers": [
+                  "Afifah",
+                  "Arjun",
+                  "Kabir",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": false,
+                "explanation": "Drinks consumption is not specified in the message.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg. Arjun and Kabir had chicken. Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "Fixed shares exceed component amount"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "OjXBas8W6KOp-Q-KipzRCQ",
+            "attempts": 1,
+            "function_call_id": "call_2306655",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7486,
+              "candidatesTokenCount": 345,
+              "totalTokenCount": 7831
+            },
+            "input_sha256": "31e769ed98d98ef8dd94b855899be0af53e10357d1b7847c69d4c2b8fed94b75",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_601d9db9d5fa",
+          "timestamp": "2026-10-03T17:02:51.471415Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Fixed shares exceed component amount",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for veg platter, chicken platter, and dessert based on Afifah's statement.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Riya": 1,
+                  "Afifah": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Kabir": 1,
+                  "Arjun": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {
+                  "Kabir": "40000"
+                },
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "Fixed shares exceed component amount"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "PDXBaoywHvy4g8UP5pKX-AQ",
+            "attempts": 1,
+            "function_call_id": "call_1813425",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7486,
+              "candidatesTokenCount": 335,
+              "totalTokenCount": 7821
+            },
+            "input_sha256": "ec9f789b2f227feb5dc4fc313c33e55c84a9b0c6c6b539a8a83c075bb38d73ac",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_68795493e6eb",
+          "timestamp": "2026-10-03T17:02:53.806480Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Reconstruct context for veg platter, chicken platter, and dessert based on Afifah's statement.",
+          "rule_ids": [
+            "U1",
+            "U2"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for veg platter, chicken platter, and dessert based on Afifah's statement.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_c265b982e86f",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Riya": 1,
+                  "Afifah": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_52670c1f2417",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Arjun": 1,
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_ba220e55b595",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_4ed00338c99f",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "CONTEXT_UPDATED",
+            "unknown_components": [
+              "cmp_d3a4a67fee95"
+            ]
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": true
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "PjXBaq6qIcHbg8UPpvqm6Ak",
+            "attempts": 1,
+            "function_call_id": "call_2191811",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7616,
+              "candidatesTokenCount": 91,
+              "totalTokenCount": 7707
+            },
+            "input_sha256": "57dfe5a92760d37eae7062fa0b9fbe7725d48a09c0805a6035ed4723de721c29",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_b94cf8c1cd67",
+          "timestamp": "2026-10-03T17:02:55.271351Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "messaging",
+          "state_before": "UNDERSTANDING",
+          "decision": "REQUEST_CLARIFICATION",
+          "concise_reason": "Drinks component has no assigned consumers or weights.",
+          "rule_ids": [
+            "U2",
+            "U3",
+            "U4",
+            "U7"
+          ],
+          "action": "request_clarification",
+          "exact_message": "Who had the drinks?",
+          "recipient": "Afifah",
+          "tool_request": {
+            "reason": "Drinks component has no assigned consumers or weights.",
+            "rule_ids": [
+              "U2",
+              "U3",
+              "U4",
+              "U7"
+            ],
+            "affected_entities": [],
+            "tool": "request_clarification",
+            "recipient": "Afifah",
+            "component_ids": [
+              "cmp_d3a4a67fee95"
+            ],
+            "message": "Who had the drinks?",
+            "topic": "context"
+          },
+          "tool_response": {
+            "mode": "wizard",
+            "status": "SIMULATED_DELIVERED",
+            "message_id": "message_e706865e0e32",
+            "requires_external_input": true
+          },
+          "state_after": "NEEDS_CLARIFICATION",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "case": "C",
+      "episode_id": "episode_663ddb88f153",
+      "input": {
+        "title": "Live test C · Dinner complete",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 240000,
+        "initial_context": "Riya and I had veg. Arjun and Kabir had chicken. Kabir had dessert. Arjun and Kabir shared the drinks.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Veg platter",
+            "amount": 60000
+          },
+          {
+            "description": "Chicken platter",
+            "amount": 80000
+          },
+          {
+            "description": "Dessert",
+            "amount": 40000
+          },
+          {
+            "description": "Drinks",
+            "amount": 60000
+          }
+        ]
+      },
+      "passed": true,
+      "errors": [],
+      "status": "AWAITING_CONFIRMATION",
+      "questions": [],
+      "shares_minor": {
+        "Afifah": 30000,
+        "Riya": 30000,
+        "Arjun": 70000,
+        "Kabir": 110000
+      },
+      "decisions": [
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "TTTBas_EDZ7-4-EPqqCn4Ak",
+            "attempts": 1,
+            "function_call_id": "call_2441120",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7063,
+              "candidatesTokenCount": 381,
+              "totalTokenCount": 7444
+            },
+            "input_sha256": "f5025afe58297ee790585b6a989506a9d14977c7dd13c9fca2dd3567ad646b68",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_70d8db0c9355",
+          "timestamp": "2026-10-03T16:58:54.634691Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct consumption based on Afifah's explicit message for each component.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the Veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the Chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the Dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the Drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "TzTBatqrGJWqg8UPkI-I6AQ",
+            "attempts": 1,
+            "function_call_id": "call_2221393",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7076,
+              "candidatesTokenCount": 441,
+              "totalTokenCount": 7517
+            },
+            "input_sha256": "9787e0683e7759a1070afe9e50649b5471bdbad3771d2bee281e9242034f3124",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_871f355189c1",
+          "timestamp": "2026-10-03T16:58:56.984242Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Fixed shares exceed component amount",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "R1",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructed all component consumption and sharing weights from Afifah's statement.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "R1"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Afifah": 1,
+                  "Riya": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya consumed the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Arjun": 1,
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir consumed the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {
+                  "Kabir": "40000"
+                },
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir consumed the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Kabir": 1,
+                  "Arjun": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "Fixed shares exceed component amount"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "UjTBarQCj96DxQ-N6fKoBA",
+            "attempts": 1,
+            "function_call_id": "call_2405048",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7075,
+              "candidatesTokenCount": 389,
+              "totalTokenCount": 7464
+            },
+            "input_sha256": "e83b26a7e985358f5802e14e2cae574f22d97e55ab0d15af9b80bb15b47cc678",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_22cf08153666",
+          "timestamp": "2026-10-03T16:58:59.334617Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct the component consumption context accurately based on Afifah's message.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya shared the veg platter equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the chicken platter equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {},
+          "id": "audit_caa62bf0a4f1",
+          "timestamp": "2026-10-03T16:58:59.346375Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+          "rule_ids": [
+            "E3"
+          ],
+          "action": "loop_guard",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {},
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "1zTBapuYAv-jqfkP5_f02QQ",
+            "attempts": 1,
+            "function_call_id": "call_2375915",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7231,
+              "candidatesTokenCount": 388,
+              "totalTokenCount": 7619
+            },
+            "input_sha256": "8fc1243f5c636190f5baf2ef54c143c301ce576aed2cf4a88f9dc42f448ba820",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_4f2a17297d4f",
+          "timestamp": "2026-10-03T17:01:12.821315Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U7",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstructed allocation context for all bill components based on Afifah's explicit message.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U7"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "2TTBapL1IKbRg8UPlfaGsQo",
+            "attempts": 1,
+            "function_call_id": "call_1729433",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7244,
+              "candidatesTokenCount": 392,
+              "totalTokenCount": 7636
+            },
+            "input_sha256": "9609f3ef8ab4bdb94142c1c88b1369e4679ed0df94bad69f26bcf45c13a10a4a",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_54ea9f1d024d",
+          "timestamp": "2026-10-03T17:01:15.194824Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4",
+            "R1",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct the consumption based on Afifah's message for all bill items.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4",
+              "R1"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya consumed the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir consumed the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir consumed the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "3DTBavreC7mkg8UP5PX80Ak",
+            "attempts": 1,
+            "function_call_id": "call_2508753",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7244,
+              "candidatesTokenCount": 371,
+              "totalTokenCount": 7615
+            },
+            "input_sha256": "e19036318c08606ce6d379658f604e7b2596c81f01306b50e6ff5fd1ed3b17dc",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_dc10c1eae527",
+          "timestamp": "2026-10-03T17:01:17.682031Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "All consumers need supported allocation instructions",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U7",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for all bill components based on Afifah's explicit message.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U7"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya had the Veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir had the Chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the Dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the Drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "All consumers need supported allocation instructions"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {},
+          "id": "audit_4c0e41a3eb32",
+          "timestamp": "2026-10-03T17:01:17.692846Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "Three unsafe actions rejected; awaiting human review.",
+          "rule_ids": [
+            "E3"
+          ],
+          "action": "loop_guard",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {},
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "QDXBavemD4rGg8UP9NnEmQo",
+            "attempts": 1,
+            "function_call_id": "call_1602797",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7501,
+              "candidatesTokenCount": 437,
+              "totalTokenCount": 7938
+            },
+            "input_sha256": "70157d522d7716baa815cca2e9bb39c007381ee0f16d6c9db9a264b9b25989e9",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_3e81d5176f49",
+          "timestamp": "2026-10-03T17:02:57.593695Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Fixed shares exceed component amount",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "E3"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct context for all bill components based on Afifah's clear message.",
+            "rule_ids": [
+              "U1",
+              "U2"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Afifah": 1,
+                  "Riya": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya consumed the veg platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Kabir": 1,
+                  "Arjun": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir consumed the chicken platter.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {
+                  "Kabir": "40000"
+                },
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir consumed the dessert.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Kabir": 1,
+                  "Arjun": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "POLICY_REJECTED",
+            "error": "Fixed shares exceed component amount"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "QjXBavTYM__Fg8UPz--duAo",
+            "attempts": 1,
+            "function_call_id": "call_2223879",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7513,
+              "candidatesTokenCount": 453,
+              "totalTokenCount": 7966
+            },
+            "input_sha256": "f7dce7650b76546ce328569df84bff7db945847df5b10d6a21a65d3155fae9b6",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_b43ec5bba3e8",
+          "timestamp": "2026-10-03T17:03:00.381285Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "RECONSTRUCT_CONTEXT",
+          "concise_reason": "Reconstruct consumption and sharing for all components based on Afifah's message using valid weights and fixed amounts.",
+          "rule_ids": [
+            "U1",
+            "U2",
+            "U4"
+          ],
+          "action": "reconstruct_context",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "Reconstruct consumption and sharing for all components based on Afifah's message using valid weights and fixed amounts.",
+            "rule_ids": [
+              "U1",
+              "U2",
+              "U4"
+            ],
+            "affected_entities": [],
+            "tool": "reconstruct_context",
+            "items": [
+              {
+                "component_id": "cmp_ce174c151f38",
+                "consumers": [
+                  "Afifah",
+                  "Riya"
+                ],
+                "weights": {
+                  "Afifah": 1,
+                  "Riya": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Afifah and Riya shared the veg platter equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Riya and I had veg."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_5c5550d06b0e",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Arjun": 1,
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the chicken platter equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir had chicken."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_bda8789a1a09",
+                "consumers": [
+                  "Kabir"
+                ],
+                "weights": {},
+                "fixed_amounts": {
+                  "Kabir": "400.00"
+                },
+                "percentages": {},
+                "complete": true,
+                "explanation": "Kabir had the dessert entirely.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Kabir had dessert."
+                  }
+                ]
+              },
+              {
+                "component_id": "cmp_65334e541707",
+                "consumers": [
+                  "Arjun",
+                  "Kabir"
+                ],
+                "weights": {
+                  "Arjun": 1,
+                  "Kabir": 1
+                },
+                "fixed_amounts": {},
+                "percentages": {},
+                "complete": true,
+                "explanation": "Arjun and Kabir shared the drinks equally.",
+                "citations": [
+                  {
+                    "evidence_id": "ev_649f89ea2f22",
+                    "quote": "Arjun and Kabir shared the drinks."
+                  }
+                ]
+              }
+            ]
+          },
+          "tool_response": {
+            "status": "CONTEXT_UPDATED",
+            "unknown_components": []
+          },
+          "state_after": "READY_TO_RECONCILE",
+          "accepted": true
+        },
+        {
+          "provider_call": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "requested_model": "gemini-3.5-flash-lite",
+            "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+            "response_id": "RTXBatCnCM6iqfkPu5aL0QM",
+            "attempts": 1,
+            "function_call_id": "call_2511512",
+            "finish_reason": "STOP",
+            "usage": {
+              "promptTokenCount": 7691,
+              "candidatesTokenCount": 40,
+              "totalTokenCount": 7731
+            },
+            "input_sha256": "f0e3c92fbebae048338bd734fd6a5f4f763fa640401cb7c0b659aa78971f88b7",
+            "prompt_sha256": "f7b18fbe73186ee10fe55c062c9bf3d5980962ad522325df6f064896302ca655"
+          },
+          "id": "audit_02e14bab03bd",
+          "timestamp": "2026-10-03T17:03:01.767764Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "READY_TO_RECONCILE",
+          "decision": "PROPOSE_ALLOCATION",
+          "concise_reason": "All components have fully supported context and consumption details.",
+          "rule_ids": [
+            "R1",
+            "R2"
+          ],
+          "action": "propose_allocation",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {
+            "reason": "All components have fully supported context and consumption details.",
+            "rule_ids": [
+              "R1",
+              "R2"
+            ],
+            "affected_entities": [],
+            "tool": "propose_allocation"
+          },
+          "tool_response": {
+            "status": "ALLOCATION_PROPOSED",
+            "allocation_total": 240000,
+            "obligation_count": 6
+          },
+          "state_after": "AWAITING_CONFIRMATION",
+          "accepted": true
+        },
+        {
+          "provider_call": {},
+          "id": "audit_e1fef3ba73cc",
+          "timestamp": "2026-10-03T17:03:03.243853Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "AWAITING_CONFIRMATION",
+          "decision": "WAIT",
+          "concise_reason": "Repeated action stopped without changing the ledger.",
+          "rule_ids": [
+            "E3"
+          ],
+          "action": "loop_guard",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {},
+          "state_after": "AWAITING_CONFIRMATION",
+          "accepted": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+# Local credentials (the safe template is versioned)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Dependency environments and generated build output
+.venv/
+venv/
+node_modules/
+frontend/dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.tsbuildinfo
+
+# Local state, uploads, tools and independent verification checkouts
+*.sqlite3*
+*.db
+*.db-wal
+*.db-shm
+data/
+.tools/
+.repro/
+.task-*
+
+# Temporary logs and editor/OS files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

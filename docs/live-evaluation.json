@@ -1,0 +1,350 @@
+{
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "passed": 0,
+  "cases": [
+    {
+      "case": "A",
+      "episode_id": "episode_5480f21a3f81",
+      "input": {
+        "title": "Live test A · Pizza",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 120000,
+        "initial_context": "All four of us shared the pizza equally.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Pizza",
+            "amount": 120000
+          }
+        ]
+      },
+      "passed": false,
+      "errors": [
+        "Agent paused: LLM_HTTP_429"
+      ],
+      "status": "UNDERSTANDING",
+      "questions": [],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {},
+          "id": "audit_ca8c744693b5",
+          "timestamp": "2026-10-03T16:33:06.161066Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "LLM_HTTP_429",
+          "rule_ids": [
+            "E1",
+            "E3"
+          ],
+          "action": "provider",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {
+            "status": "UNAVAILABLE"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "episode_id": "episode_27b95f906bbd",
+      "input": {
+        "title": "Live test B · Dinner missing drinks",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 240000,
+        "initial_context": "Riya and I shared the veg platter. Arjun and Kabir shared the chicken. Kabir ordered dessert.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Veg platter",
+            "amount": 60000
+          },
+          {
+            "description": "Chicken platter",
+            "amount": 80000
+          },
+          {
+            "description": "Dessert",
+            "amount": 40000
+          },
+          {
+            "description": "Drinks",
+            "amount": 60000
+          }
+        ]
+      },
+      "passed": false,
+      "errors": [
+        "Agent paused: LLM_HTTP_429"
+      ],
+      "status": "UNDERSTANDING",
+      "questions": [],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {},
+          "id": "audit_154f19086e46",
+          "timestamp": "2026-10-03T16:33:12.338437Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "LLM_HTTP_429",
+          "rule_ids": [
+            "E1",
+            "E3"
+          ],
+          "action": "provider",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {
+            "status": "UNAVAILABLE"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "case": "C",
+      "episode_id": "episode_0c5d678dd01f",
+      "input": {
+        "title": "Live test C · Dinner complete",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 240000,
+        "initial_context": "Riya and I shared the veg platter. Arjun and Kabir shared the chicken. Kabir ordered dessert. Arjun and Kabir had the drinks.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Veg platter",
+            "amount": 60000
+          },
+          {
+            "description": "Chicken platter",
+            "amount": 80000
+          },
+          {
+            "description": "Dessert",
+            "amount": 40000
+          },
+          {
+            "description": "Drinks",
+            "amount": 60000
+          }
+        ]
+      },
+      "passed": false,
+      "errors": [
+        "Agent paused: LLM_HTTP_429"
+      ],
+      "status": "UNDERSTANDING",
+      "questions": [],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {},
+          "id": "audit_562a3a45c1c9",
+          "timestamp": "2026-10-03T16:33:18.414126Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "LLM_HTTP_429",
+          "rule_ids": [
+            "E1",
+            "E3"
+          ],
+          "action": "provider",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {
+            "status": "UNAVAILABLE"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "case": "D",
+      "episode_id": "episode_ef9199301ebe",
+      "input": {
+        "title": "Live test D · Rough equal proposal",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 240000,
+        "initial_context": "Riya and I shared the veg platter. Arjun and Kabir shared the chicken. Kabir ordered dessert. Arjun and Kabir had the drinks.",
+        "category": "food_dining",
+        "components": [
+          {
+            "description": "Veg platter",
+            "amount": 60000
+          },
+          {
+            "description": "Chicken platter",
+            "amount": 80000
+          },
+          {
+            "description": "Dessert",
+            "amount": 40000
+          },
+          {
+            "description": "Drinks",
+            "amount": 60000
+          }
+        ],
+        "split_preference": "known_consumption",
+        "user_proposed_split": {
+          "Afifah": 60000,
+          "Riya": 60000,
+          "Arjun": 60000,
+          "Kabir": 60000
+        }
+      },
+      "passed": false,
+      "errors": [
+        "Agent paused: LLM_HTTP_429"
+      ],
+      "status": "UNDERSTANDING",
+      "questions": [],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {},
+          "id": "audit_a3fb62549a3e",
+          "timestamp": "2026-10-03T16:33:24.575715Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "LLM_HTTP_429",
+          "rule_ids": [
+            "E1",
+            "E3"
+          ],
+          "action": "provider",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {
+            "status": "UNAVAILABLE"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "case": "E",
+      "episode_id": "episode_17094d3811ed",
+      "input": {
+        "title": "Live test E · Cab agreement",
+        "payer": "Afifah",
+        "participants": [
+          "Afifah",
+          "Riya",
+          "Arjun",
+          "Kabir"
+        ],
+        "currency": "INR",
+        "total": 100000,
+        "initial_context": "Riya joined halfway through the ride and we agreed she'd only pay ₹100.",
+        "category": "travel_transport",
+        "components": [
+          {
+            "description": "Cab",
+            "amount": 100000
+          }
+        ]
+      },
+      "passed": false,
+      "errors": [
+        "Agent paused: LLM_HTTP_429"
+      ],
+      "status": "UNDERSTANDING",
+      "questions": [],
+      "shares_minor": {},
+      "decisions": [
+        {
+          "provider_call": {},
+          "id": "audit_38069703b9c3",
+          "timestamp": "2026-10-03T16:33:31.141651Z",
+          "input_received": {
+            "event": "resume"
+          },
+          "input_source": "system",
+          "real_world_source": "system",
+          "connector": "agent",
+          "state_before": "UNDERSTANDING",
+          "decision": "WAIT",
+          "concise_reason": "LLM_HTTP_429",
+          "rule_ids": [
+            "E1",
+            "E3"
+          ],
+          "action": "provider",
+          "exact_message": null,
+          "recipient": null,
+          "tool_request": {},
+          "tool_response": {
+            "status": "UNAVAILABLE"
+          },
+          "state_after": "UNDERSTANDING",
+          "accepted": false
+        }
+      ]
+    }
+  ]
+}

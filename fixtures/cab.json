@@ -1,0 +1,10 @@
+{
+  "title": "Cab to the airport",
+  "payer": "Maya",
+  "participants": ["Maya", "Dev", "Sam"],
+  "currency": "INR",
+  "total": 150000,
+  "merchant": "Airport cab",
+  "components": [{"description": "Journey", "amount": 120000}, {"description": "Extra stop", "amount": 30000}],
+  "initial_context": "Maya, Dev and Sam shared the journey equally. Only Dev requested the extra stop and agreed to cover its cost."
+}

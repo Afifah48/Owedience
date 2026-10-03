@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-03T19:54:23.408979+00:00",
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "status": "PASS",
+  "decision": {
+    "reason": "Waiting for A to provide bill details or sharing information as requested.",
+    "rule_ids": [
+      "E3",
+      "U3"
+    ],
+    "affected_entities": [
+      "A",
+      "B"
+    ],
+    "tool": "wait"
+  },
+  "provider_call": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "requested_model": "gemini-3.5-flash-lite",
+    "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+    "response_id": "cF3Bau2oMYrGg8UP9NnEmQo",
+    "attempts": 1,
+    "function_call_id": "call_2652675",
+    "finish_reason": "STOP",
+    "usage": {
+      "promptTokenCount": 7599,
+      "candidatesTokenCount": 52,
+      "totalTokenCount": 7651
+    },
+    "input_sha256": "1b9ab99cc4df12023bcc9887fc8e6fa38cee8947110a691eb1cd945de0559a5c",
+    "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+  }
+}

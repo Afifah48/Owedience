@@ -1,0 +1,15 @@
+{
+  "title": "Dinner at Social",
+  "payer": "Afifah",
+  "participants": ["Afifah", "Riya", "Arjun", "Kabir"],
+  "currency": "INR",
+  "total": 240000,
+  "merchant": "Social",
+  "components": [
+    {"description": "Veg platter", "amount": 60000},
+    {"description": "Chicken platter", "amount": 80000},
+    {"description": "Dessert", "amount": 40000},
+    {"description": "Drinks", "amount": 60000}
+  ],
+  "initial_context": "Riya and I shared the veg platter. Arjun and Kabir shared the chicken. Kabir ordered dessert."
+}

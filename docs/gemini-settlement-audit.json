@@ -1,0 +1,841 @@
+{
+  "passed": true,
+  "episode_id": "episode_24cb7e6b39aa",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "status": "CLOSED",
+  "obligations": [
+    {
+      "id": "obl_f402d3dc01d0",
+      "debtor": "Arjun",
+      "creditor": "Afifah",
+      "amount": 70000,
+      "amount_paid": 70000,
+      "status": "PAID",
+      "follow_up_authorized": "AUTHORIZED",
+      "authorized_by": "Afifah",
+      "follow_up_policy": {
+        "minimum_interval_hours": 72,
+        "maximum": 3,
+        "quiet_start": "22:00",
+        "quiet_end": "08:00",
+        "utc_offset_minutes": 330,
+        "channels": [
+          "message"
+        ],
+        "reminder_approval_mode": "ASK_FIRST_THEN_AUTO",
+        "tone": "neutral",
+        "relationship_context": ""
+      },
+      "reminder_count": 2,
+      "reminder_history": [
+        {
+          "timestamp": "2026-10-07T08:00:00+05:30",
+          "amount": 70000,
+          "message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 700.00 for the dinner follow-up demonstration.",
+          "connector": {
+            "mode": "wizard",
+            "status": "SIMULATED_DELIVERY",
+            "message_id": "message_1b376ac1af99"
+          }
+        },
+        {
+          "timestamp": "2026-10-10T08:00:00+05:30",
+          "amount": 30000,
+          "message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 300.00 for the dinner follow-up demonstration.",
+          "connector": {
+            "mode": "wizard",
+            "status": "SIMULATED_DELIVERY",
+            "message_id": "message_b7379b8c00b2"
+          }
+        }
+      ]
+    }
+  ],
+  "payments": [
+    {
+      "id": "episode_24cb7e6b39aa-partial",
+      "amount": 40000,
+      "debtor": "Arjun",
+      "creditor": "Afifah",
+      "currency": "INR",
+      "reference": "payref_cffc8bc6cb2e",
+      "evidence_id": "ev_1719e6032b20",
+      "status": "MATCHED",
+      "applied": {
+        "obl_f402d3dc01d0": 40000
+      }
+    },
+    {
+      "id": "episode_24cb7e6b39aa-final",
+      "amount": 30000,
+      "debtor": "Arjun",
+      "creditor": "Afifah",
+      "currency": "INR",
+      "reference": "payref_cffc8bc6cb2e",
+      "evidence_id": "ev_1f9845fa1899",
+      "status": "MATCHED",
+      "applied": {
+        "obl_f402d3dc01d0": 30000
+      }
+    }
+  ],
+  "audit_events": [
+    {
+      "provider_call": {},
+      "id": "audit_27af4aa1d82c",
+      "timestamp": "2026-10-03T18:59:45.040408Z",
+      "input_received": {
+        "content": "{\"actor\":\"Afifah\",\"action\":\"authorize\",\"policy\":{\"minimum_interval_hours\":72,\"maximum\":3,\"quiet_start\":\"22:00\",\"quiet_end\":\"08:00\",\"utc_offset_minutes\":330,\"channels\":[\"message\"],\"reminder_approval_mode\":\"ASK_EACH_TIME\",\"tone\":\"neutral\",\"relationship_context\":\"\"}}",
+        "evidence_id": "ev_173015ed5983",
+        "connector": "human"
+      },
+      "input_source": "consumer",
+      "real_world_source": "Afifah",
+      "connector": "human",
+      "state_before": "ACTIVE",
+      "decision": "HUMAN_AUTHORIZE",
+      "concise_reason": "Creditor explicitly controlled this obligation’s follow-up.",
+      "rule_ids": [
+        "S6",
+        "S8"
+      ],
+      "action": "human_follow_up",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "actor": "Afifah",
+        "action": "authorize",
+        "policy": {
+          "minimum_interval_hours": 72,
+          "maximum": 3,
+          "quiet_start": "22:00",
+          "quiet_end": "08:00",
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "reminder_approval_mode": "ASK_EACH_TIME",
+          "tone": "neutral",
+          "relationship_context": ""
+        }
+      },
+      "tool_response": {
+        "obligation_id": "obl_f402d3dc01d0",
+        "debtor": "Arjun",
+        "authorized_by": "Afifah",
+        "authorization": "AUTHORIZED",
+        "amount_remaining": 70000,
+        "policy": {
+          "minimum_interval_hours": 72,
+          "maximum": 3,
+          "quiet_start": "22:00",
+          "quiet_end": "08:00",
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "reminder_approval_mode": "ASK_EACH_TIME",
+          "tone": "neutral",
+          "relationship_context": ""
+        }
+      },
+      "state_after": "ACTIVE",
+      "accepted": true
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "olDBapTUB4mkqfkP_eSo6AQ",
+        "attempts": 1,
+        "function_call_id": "call_2369167",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 10218,
+          "candidatesTokenCount": 98,
+          "totalTokenCount": 10316
+        },
+        "input_sha256": "c7d4c73cb89bd28cc1df863d66a71e3c10d5491a8b6f65e85f4ebd1fd654dec9",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_dfecfcb1f95b",
+      "timestamp": "2026-10-03T18:59:46.996507Z",
+      "input_received": {
+        "content": "{\"id\": \"event_9ff9e941e376\", \"actor\": \"World clock\", \"origin\": \"wizard\", \"type\": \"clock\", \"timestamp\": \"2026-10-07T08:00:00+05:30\"}",
+        "evidence_id": "ev_f589019a55f2",
+        "connector": "human"
+      },
+      "input_source": "wizard",
+      "real_world_source": "World clock",
+      "connector": "human",
+      "state_before": "ACTIVE",
+      "decision": "REQUEST_REMINDER_APPROVAL",
+      "concise_reason": "Obligation is reminder eligible and requires approval under ASK_EACH_TIME mode.",
+      "rule_ids": [
+        "S6",
+        "S8"
+      ],
+      "action": "request_reminder_approval",
+      "exact_message": "Hi Afifah, should I send a reminder to Arjun for the remaining {{remaining}} for the dinner follow-up demonstration?",
+      "recipient": "Afifah",
+      "tool_request": {
+        "reason": "Obligation is reminder eligible and requires approval under ASK_EACH_TIME mode.",
+        "rule_ids": [
+          "S6",
+          "S8"
+        ],
+        "affected_entities": [],
+        "tool": "request_reminder_approval",
+        "obligation_id": "obl_f402d3dc01d0",
+        "message": "Hi Afifah, should I send a reminder to Arjun for the remaining {{remaining}} for the dinner follow-up demonstration?"
+      },
+      "tool_response": {
+        "status": "APPROVAL_REQUESTED",
+        "exact_message": "Hi Afifah, should I send a reminder to Arjun for the remaining INR 700.00 for the dinner follow-up demonstration?",
+        "recipient": "Afifah",
+        "obligation_id": "obl_f402d3dc01d0"
+      },
+      "state_after": "ACTIVE",
+      "accepted": true,
+      "rendered_message": "Hi Afifah, should I send a reminder to Arjun for the remaining INR 700.00 for the dinner follow-up demonstration?"
+    },
+    {
+      "provider_call": {},
+      "id": "audit_bc523075b997",
+      "timestamp": "2026-10-03T18:59:48.652539Z",
+      "input_received": {
+        "content": "{\"actor\":\"Afifah\",\"action\":\"approve\",\"policy\":null}",
+        "evidence_id": "ev_f2754543082a",
+        "connector": "human"
+      },
+      "input_source": "consumer",
+      "real_world_source": "Afifah",
+      "connector": "human",
+      "state_before": "ACTIVE",
+      "decision": "HUMAN_APPROVE",
+      "concise_reason": "Creditor explicitly controlled this obligation’s follow-up.",
+      "rule_ids": [
+        "S6",
+        "S8"
+      ],
+      "action": "human_follow_up",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "actor": "Afifah",
+        "action": "approve",
+        "policy": null
+      },
+      "tool_response": {
+        "obligation_id": "obl_f402d3dc01d0",
+        "debtor": "Arjun",
+        "authorized_by": "Afifah",
+        "authorization": "AUTHORIZED",
+        "amount_remaining": 70000,
+        "policy": {
+          "minimum_interval_hours": 72,
+          "maximum": 3,
+          "quiet_start": "22:00",
+          "quiet_end": "08:00",
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "reminder_approval_mode": "ASK_EACH_TIME",
+          "tone": "neutral",
+          "relationship_context": ""
+        }
+      },
+      "state_after": "ACTIVE",
+      "accepted": true
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "pVDBasS4LviiqfkPjcLZ4QQ",
+        "attempts": 1,
+        "function_call_id": "call_1508059",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 10605,
+          "candidatesTokenCount": 117,
+          "totalTokenCount": 10722
+        },
+        "input_sha256": "ead73a94fe8fa1ff017ed44b502789ddcabbe3c96b7b2ef3de3e5f25a2a6ddaf",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_250fc1f46941",
+      "timestamp": "2026-10-03T18:59:50.702988Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "messaging",
+      "state_before": "ACTIVE",
+      "decision": "REMIND",
+      "concise_reason": "No verified payment link is available",
+      "rule_ids": [
+        "S6",
+        "E3"
+      ],
+      "action": "remind",
+      "exact_message": "Hi Arjun, here is a reminder for your share of {{expense}} ({{component}}): {{remaining}}. Payment reference: {{payment_link}}",
+      "recipient": null,
+      "tool_request": {
+        "reason": "Afifah approved sending the reminder for Arjun's confirmed obligation, and the obligation is eligible.",
+        "rule_ids": [
+          "S6"
+        ],
+        "affected_entities": [
+          "Arjun",
+          "Afifah"
+        ],
+        "tool": "remind",
+        "obligation_id": "obl_f402d3dc01d0",
+        "channel": "message",
+        "message": "Hi Arjun, here is a reminder for your share of {{expense}} ({{component}}): {{remaining}}. Payment reference: {{payment_link}}"
+      },
+      "tool_response": {
+        "status": "POLICY_REJECTED",
+        "error": "No verified payment link is available"
+      },
+      "state_after": "ACTIVE",
+      "accepted": false
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "p1DBapeVL5Wzg8UPltbm0Ak",
+        "attempts": 1,
+        "function_call_id": "call_2551719",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 10618,
+          "candidatesTokenCount": 112,
+          "totalTokenCount": 10730
+        },
+        "input_sha256": "39ebe01ba6e8a5326e58fee9c5a7f08df9724f29c609aa9ce18b59c3579eb482",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_fe814b2526b2",
+      "timestamp": "2026-10-03T18:59:52.538737Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "messaging",
+      "state_before": "ACTIVE",
+      "decision": "REMIND",
+      "concise_reason": "Afifah approved sending a reminder for obligation obl_f402d3dc01d0.",
+      "rule_ids": [
+        "S6"
+      ],
+      "action": "remind",
+      "exact_message": "Hi Arjun, here is a friendly reminder regarding the remaining {{remaining}} for the dinner follow-up demonstration.",
+      "recipient": "Arjun",
+      "tool_request": {
+        "reason": "Afifah approved sending a reminder for obligation obl_f402d3dc01d0.",
+        "rule_ids": [
+          "S6"
+        ],
+        "affected_entities": [
+          "Arjun",
+          "Afifah"
+        ],
+        "tool": "remind",
+        "obligation_id": "obl_f402d3dc01d0",
+        "channel": "message",
+        "message": "Hi Arjun, here is a friendly reminder regarding the remaining {{remaining}} for the dinner follow-up demonstration."
+      },
+      "tool_response": {
+        "mode": "wizard",
+        "status": "SIMULATED_DELIVERY",
+        "message_id": "message_1b376ac1af99",
+        "exact_message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 700.00 for the dinner follow-up demonstration.",
+        "recipient": "Arjun",
+        "obligation_id": "obl_f402d3dc01d0",
+        "amount_remaining": 70000,
+        "reminder_count": 1
+      },
+      "state_after": "ACTIVE",
+      "accepted": true,
+      "rendered_message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 700.00 for the dinner follow-up demonstration."
+    },
+    {
+      "provider_call": {},
+      "id": "audit_7f6dd8bb0bc4",
+      "timestamp": "2026-10-03T18:59:54.211607Z",
+      "input_received": {
+        "content": "{\"actor\":\"Afifah\",\"action\":\"edit\",\"policy\":{\"minimum_interval_hours\":72,\"maximum\":3,\"quiet_start\":\"22:00\",\"quiet_end\":\"08:00\",\"utc_offset_minutes\":330,\"channels\":[\"message\"],\"reminder_approval_mode\":\"ASK_FIRST_THEN_AUTO\",\"tone\":\"neutral\",\"relationship_context\":\"\"}}",
+        "evidence_id": "ev_7c3e3f411de9",
+        "connector": "human"
+      },
+      "input_source": "consumer",
+      "real_world_source": "Afifah",
+      "connector": "human",
+      "state_before": "ACTIVE",
+      "decision": "HUMAN_EDIT",
+      "concise_reason": "Creditor explicitly controlled this obligation’s follow-up.",
+      "rule_ids": [
+        "S6",
+        "S8"
+      ],
+      "action": "human_follow_up",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "actor": "Afifah",
+        "action": "edit",
+        "policy": {
+          "minimum_interval_hours": 72,
+          "maximum": 3,
+          "quiet_start": "22:00",
+          "quiet_end": "08:00",
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "reminder_approval_mode": "ASK_FIRST_THEN_AUTO",
+          "tone": "neutral",
+          "relationship_context": ""
+        }
+      },
+      "tool_response": {
+        "obligation_id": "obl_f402d3dc01d0",
+        "debtor": "Arjun",
+        "authorized_by": "Afifah",
+        "authorization": "AUTHORIZED",
+        "amount_remaining": 70000,
+        "policy": {
+          "minimum_interval_hours": 72,
+          "maximum": 3,
+          "quiet_start": "22:00",
+          "quiet_end": "08:00",
+          "utc_offset_minutes": 330,
+          "channels": [
+            "message"
+          ],
+          "reminder_approval_mode": "ASK_FIRST_THEN_AUTO",
+          "tone": "neutral",
+          "relationship_context": ""
+        }
+      },
+      "state_after": "ACTIVE",
+      "accepted": true
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "q1DBat-fFKHOjuMP_IusQQ",
+        "attempts": 1,
+        "function_call_id": "call_1900733",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 11567,
+          "candidatesTokenCount": 69,
+          "totalTokenCount": 11636
+        },
+        "input_sha256": "4fca165ca2a0f4829113c9e80b44827ae8e8d79ab55a62607409b4cc7220cc1d",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_f60bbf2e98ef",
+      "timestamp": "2026-10-03T18:59:55.902419Z",
+      "input_received": {
+        "content": "{\"id\": \"event_915483a69bd0\", \"actor\": \"Payment rail\", \"origin\": \"wizard\", \"type\": \"payment\", \"payment_id\": \"episode_24cb7e6b39aa-partial\", \"amount\": 40000, \"debtor\": \"Arjun\", \"creditor\": \"Afifah\", \"currency\": \"INR\", \"reference\": \"payref_cffc8bc6cb2e\", \"verified\": true}",
+        "evidence_id": "ev_1719e6032b20",
+        "connector": "pine_labs"
+      },
+      "input_source": "wizard",
+      "real_world_source": "Payment rail",
+      "connector": "pine_labs",
+      "state_before": "ACTIVE",
+      "decision": "MATCH_PAYMENT",
+      "concise_reason": "Apply verified partial payment from Arjun to the obligation.",
+      "rule_ids": [
+        "S4"
+      ],
+      "action": "match_payment",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "reason": "Apply verified partial payment from Arjun to the obligation.",
+        "rule_ids": [
+          "S4"
+        ],
+        "affected_entities": [
+          "Afifah",
+          "Arjun"
+        ],
+        "tool": "match_payment",
+        "payment_id": "episode_24cb7e6b39aa-partial",
+        "resolution_evidence_id": null
+      },
+      "tool_response": {
+        "status": "PAYMENT_APPLIED",
+        "applied": {
+          "obl_f402d3dc01d0": 40000
+        },
+        "remaining": 30000
+      },
+      "state_after": "PARTIALLY_PAID",
+      "accepted": true
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "r1DBao-_JKbRg8UPlfaGsQo",
+        "attempts": 1,
+        "function_call_id": "call_2752449",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 11848,
+          "candidatesTokenCount": 106,
+          "totalTokenCount": 11954
+        },
+        "input_sha256": "522a7b4eea82dc1429ac059ecb10e3167d02e59b178a4d0fcb1d86bbf6e038b2",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_c99ccce506ae",
+      "timestamp": "2026-10-03T19:00:00.374181Z",
+      "input_received": {
+        "content": "{\"id\": \"event_feeac2ec9e1b\", \"actor\": \"World clock\", \"origin\": \"wizard\", \"type\": \"clock\", \"timestamp\": \"2026-10-10T08:00:00+05:30\"}",
+        "evidence_id": "ev_5a7347345b86",
+        "connector": "human"
+      },
+      "input_source": "wizard",
+      "real_world_source": "World clock",
+      "connector": "messaging",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "REMIND",
+      "concise_reason": "Arjun's obligation is eligible for a reminder and the interval has passed.",
+      "rule_ids": [
+        "S6"
+      ],
+      "action": "remind",
+      "exact_message": "Hi Arjun, here is a friendly reminder regarding the remaining {{remaining}} for the dinner follow-up demonstration.",
+      "recipient": "Arjun",
+      "tool_request": {
+        "reason": "Arjun's obligation is eligible for a reminder and the interval has passed.",
+        "rule_ids": [
+          "S6"
+        ],
+        "affected_entities": [
+          "Afifah",
+          "Arjun"
+        ],
+        "tool": "remind",
+        "obligation_id": "obl_f402d3dc01d0",
+        "channel": "message",
+        "message": "Hi Arjun, here is a friendly reminder regarding the remaining {{remaining}} for the dinner follow-up demonstration."
+      },
+      "tool_response": {
+        "mode": "wizard",
+        "status": "SIMULATED_DELIVERY",
+        "message_id": "message_b7379b8c00b2",
+        "exact_message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 300.00 for the dinner follow-up demonstration.",
+        "recipient": "Arjun",
+        "obligation_id": "obl_f402d3dc01d0",
+        "amount_remaining": 30000,
+        "reminder_count": 2
+      },
+      "state_after": "PARTIALLY_PAID",
+      "accepted": true,
+      "rendered_message": "Hi Arjun, here is a friendly reminder regarding the remaining INR 300.00 for the dinner follow-up demonstration."
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "http_status": 429,
+        "attempts": 1,
+        "response_id": null,
+        "input_sha256": "d192ba36bf50b39f18bfff1e5b2cda9f36a05156035037e953acbb0dbcc4d5bb"
+      },
+      "id": "audit_af0f826380cc",
+      "timestamp": "2026-10-03T19:00:02.701501Z",
+      "input_received": {
+        "content": "{\"id\": \"event_8ed0fc6566de\", \"actor\": \"Payment rail\", \"origin\": \"wizard\", \"type\": \"payment\", \"payment_id\": \"episode_24cb7e6b39aa-final\", \"amount\": 30000, \"debtor\": \"Arjun\", \"creditor\": \"Afifah\", \"currency\": \"INR\", \"reference\": \"payref_cffc8bc6cb2e\", \"verified\": true}",
+        "evidence_id": "ev_1f9845fa1899",
+        "connector": "pine_labs"
+      },
+      "input_source": "wizard",
+      "real_world_source": "Payment rail",
+      "connector": "pine_labs",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "WAIT",
+      "concise_reason": "LLM_HTTP_429",
+      "rule_ids": [
+        "E1",
+        "E3"
+      ],
+      "action": "provider",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {},
+      "tool_response": {
+        "status": "UNAVAILABLE"
+      },
+      "state_after": "PARTIALLY_PAID",
+      "accepted": false
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "NFHBasKFNpKzg8UP6sGw6AQ",
+        "attempts": 1,
+        "function_call_id": "call_2384382",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 12512,
+          "candidatesTokenCount": 126,
+          "totalTokenCount": 12638
+        },
+        "input_sha256": "21f6af7134db02b87bd6bb9be89a0888b20835fe51e67a8e855c5e2902f37cc0",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_e50d0120d873",
+      "timestamp": "2026-10-03T19:02:14.137038Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "agent",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "MATCH_PAYMENT",
+      "concise_reason": "Resolution requires verified external payment reference",
+      "rule_ids": [
+        "S4",
+        "E3"
+      ],
+      "action": "match_payment",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "reason": "Match verified second payment of 30000 against the remaining balance of obligation obl_f402d3dc01d0 using reference payref_cffc8bc6cb2e.",
+        "rule_ids": [
+          "S4"
+        ],
+        "affected_entities": [
+          "Afifah",
+          "Arjun"
+        ],
+        "tool": "match_payment",
+        "payment_id": "episode_24cb7e6b39aa-final",
+        "resolution_evidence_id": "ev_1f9845fa1899"
+      },
+      "tool_response": {
+        "status": "POLICY_REJECTED",
+        "error": "Resolution requires verified external payment reference"
+      },
+      "state_after": "PARTIALLY_PAID",
+      "accepted": false
+    },
+    {
+      "provider_call": {},
+      "id": "audit_c4a147c1bb20",
+      "timestamp": "2026-10-03T19:02:15.938697Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "agent",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "WAIT",
+      "concise_reason": "Repeated action stopped without changing the ledger.",
+      "rule_ids": [
+        "E3"
+      ],
+      "action": "loop_guard",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {},
+      "tool_response": {},
+      "state_after": "PARTIALLY_PAID",
+      "accepted": false
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "fVHBapDOM5ayg8UP0oOl-AQ",
+        "attempts": 1,
+        "function_call_id": "call_1900448",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 12741,
+          "candidatesTokenCount": 108,
+          "totalTokenCount": 12849
+        },
+        "input_sha256": "c1e73a927d8ecdb3bf2b6811914a7aad7376e2aa1302c26fd51257adbccc4adf",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_a436685139b8",
+      "timestamp": "2026-10-03T19:03:26.916838Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "agent",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "MATCH_PAYMENT",
+      "concise_reason": "Resolution requires verified external payment reference",
+      "rule_ids": [
+        "S4",
+        "E3"
+      ],
+      "action": "match_payment",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "reason": "Match the verified payment event ev_1f9845fa1899 using its own verified ID as resolution evidence.",
+        "rule_ids": [
+          "S4"
+        ],
+        "affected_entities": [
+          "Afifah",
+          "Arjun"
+        ],
+        "tool": "match_payment",
+        "payment_id": "episode_24cb7e6b39aa-final",
+        "resolution_evidence_id": "ev_1f9845fa1899"
+      },
+      "tool_response": {
+        "status": "POLICY_REJECTED",
+        "error": "Resolution requires verified external payment reference"
+      },
+      "state_after": "PARTIALLY_PAID",
+      "accepted": false
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "f1HBauzUMeO-g8UPlrS4kQ8",
+        "attempts": 1,
+        "function_call_id": "call_2519327",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 12601,
+          "candidatesTokenCount": 57,
+          "totalTokenCount": 12658
+        },
+        "input_sha256": "d5831e094b7b26e1a4dbbcd3d33118083617b28f2d965b82483f3853b5d5d56e",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_911943ace968",
+      "timestamp": "2026-10-03T19:03:28.631294Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "agent",
+      "state_before": "PARTIALLY_PAID",
+      "decision": "MATCH_PAYMENT",
+      "concise_reason": "Match the final verified payment using its associated payment reference event.",
+      "rule_ids": [
+        "S4"
+      ],
+      "action": "match_payment",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "reason": "Match the final verified payment using its associated payment reference event.",
+        "rule_ids": [
+          "S4"
+        ],
+        "affected_entities": [],
+        "tool": "match_payment",
+        "payment_id": "episode_24cb7e6b39aa-final",
+        "resolution_evidence_id": null
+      },
+      "tool_response": {
+        "status": "PAYMENT_APPLIED",
+        "applied": {
+          "obl_f402d3dc01d0": 30000
+        },
+        "remaining": 0
+      },
+      "state_after": "RECONCILED",
+      "accepted": true
+    },
+    {
+      "provider_call": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "requested_model": "gemini-3.5-flash-lite",
+        "endpoint": "/models/gemini-3.5-flash-lite:generateContent",
+        "response_id": "gVHBaou2Jsyrg8UPt_jRkQU",
+        "attempts": 1,
+        "function_call_id": "call_2691026",
+        "finish_reason": "STOP",
+        "usage": {
+          "promptTokenCount": 12608,
+          "candidatesTokenCount": 43,
+          "totalTokenCount": 12651
+        },
+        "input_sha256": "22e6b049ce2af394acac6feb14c1c20fbe4e7c939857abe16c2a28cb633d8b30",
+        "prompt_sha256": "733763be1c2249fdd0812ca63527bc8035128d4342208498f4b7178cd7ba86a1"
+      },
+      "id": "audit_bbe713b8e3dd",
+      "timestamp": "2026-10-03T19:03:30.528809Z",
+      "input_received": {
+        "event": "resume"
+      },
+      "input_source": "system",
+      "real_world_source": "system",
+      "connector": "agent",
+      "state_before": "RECONCILED",
+      "decision": "CLOSE_EPISODE",
+      "concise_reason": "All obligations are fully paid, all payments matched, and no active disputes or remaining tasks exist.",
+      "rule_ids": [
+        "C1"
+      ],
+      "action": "close_episode",
+      "exact_message": null,
+      "recipient": null,
+      "tool_request": {
+        "reason": "All obligations are fully paid, all payments matched, and no active disputes or remaining tasks exist.",
+        "rule_ids": [
+          "C1"
+        ],
+        "affected_entities": [],
+        "tool": "close_episode"
+      },
+      "tool_response": {
+        "status": "CLOSED",
+        "monitoring_stopped": true
+      },
+      "state_after": "CLOSED",
+      "accepted": true
+    }
+  ]
+}
